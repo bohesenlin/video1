@@ -491,6 +491,12 @@ const routes = [
         ],
     },
 
+    //cupfox界面
+    {
+        path: '/cupfoxview',
+        name: 'cupfoxview',
+        component: () => import('../components/cupfoxView.vue'),
+    },
     //爱奇艺观看界面
     {
         path: '/aiqiyivideoview',

@@ -44,6 +44,11 @@
             </div>
         </div>
         <div style="margin:6px">无法观看？换个接口试试吧</div>
+        <div class="cupfox">
+            <a v-for="(item, index) in cupfox_list" :key="index" @click="cupfox_click(item.href)">
+                <div class="title">{{item.title}}</div>
+            </a>
+        </div>
     </div>
 </template>
 
@@ -63,7 +68,8 @@ export default {
             path:'',
             page:1,
             total_page:1,
-            isActive:0
+            isActive:0,
+            cupfox_list:{}
         }
     },
 
@@ -98,6 +104,7 @@ export default {
         this.path = /\/(.*?)video/.exec(this.$route.path)[1]
         this.data_query = JSON.parse(this.$route.query.item)
         this.http_getList()
+        this.cupfox()
     },
     methods: {
         async get_interface(){
@@ -112,6 +119,15 @@ export default {
             this.jx1.forEach((item,index)=>{
                 if(item.url ==this.option){this.isActive = index}
             })
+        },
+        async cupfox(){
+            let ret1 = await this.$api.cupfox
+                .cupfox({name: this.data_query.title})
+            this.cupfox_list = ret1.data
+            console.log(this.cupfox_list)
+        },
+        cupfox_click(href){
+            this.$router.push({path:'/cupfoxview',query:{href:href}})
         },
         select_interface(index){
             this.isActive = index
