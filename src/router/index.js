@@ -483,6 +483,12 @@ const routes = [
                     import('../components/TengxunSearchListView.vue'),
             },
             {
+                path: 'cupfoxsearch',
+                name: 'cupfoxsearch',
+                component: () =>
+                    import('../components/CupfoxSearchListView.vue'),
+            },
+            {
                 path: 'fantuantvsearch',
                 name: 'fantuantvsearch',
                 component: () =>

@@ -106,3 +106,58 @@ h5{
 .active_list{
     color:rgb(239, 86, 28)
 }
+
+.cupfox{
+    height: 80px;
+    width: 360px;
+    padding: 10px;
+    
+}
+.cupfox a .title{
+    height: 20px;
+    width: 100%;
+    color: #dd5325;
+    font-size: 18px;
+    margin: 10px 0 10px 0;
+    
+}
+.cupfox a .text{
+    height: 30px;
+    width: 100%;
+    display: flex;
+    
+}
+.cupfox a .text .platform{
+    display: flex;
+    
+}
+.cupfox a .text .platform img{
+    height: 22px;
+    width: 22px;
+    border-radius: 10px;
+    border: 2px solid#9fd4fd;
+    
+}
+.cupfox a .text .platform .platform_name{
+    padding: 5px;
+    height: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background:rgba(32, 108, 207, .1);
+    text-align: center;
+    line-height: 10px;
+    color: rgba(32,108,207,1);
+    font-size: 12px;
+    margin-left: -4px;
+}
+.cupfox a .text .recommend{
+    padding: 5px;
+    margin-left: 5px;
+    height: 20px;
+    border-radius: 10px;
+    background:rgba(32, 108, 207, .1);
+    text-align: center;
+    line-height: 10px;
+    font-size: 12px;
+    color: rgba(203, 30, 131, 0.9);
+}

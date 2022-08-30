@@ -47,6 +47,13 @@
         <div class="cupfox">
             <a v-for="(item, index) in cupfox_list" :key="index" @click="cupfox_click(item.href)">
                 <div class="title">{{item.title}}</div>
+                <div class="text">
+                    <div class="platform">
+                        <img :src="item.imgUrl">
+                        <div class="platform_name">{{item.platform}}</div>
+                    </div>
+                    <div class="recommend">{{item.recommend}}</div>
+                </div>
             </a>
         </div>
     </div>
@@ -241,12 +248,6 @@ export default {
             oldIframe.parentNode.removeChild(oldIframe)
         },
     },
-
-    // watch: {
-    //     option(data) {
-    //         this.click(this.index1)
-    //     },
-    // },
 }
 </script>
 
