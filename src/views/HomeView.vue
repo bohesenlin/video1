@@ -45,18 +45,7 @@ export default {
             text: '',
             isShow: false,
             pageData: [
-                {
-                    path: '/aiqiyi/tvnew',
-                    name: '电视剧综合',
-                    params: {
-                        channel_id: 2,
-                        mode: 24,
-                        page_id: 1,
-                        data_type: 1,
-                        ret_num: 48,
-                    },
-                    // channel_id=2&data_type=1&mode=11&page_id=1&ret_num=48
-                },
+                
                 {
                     path: '/aiqiyi/tvsynthesis',
                     name: '电视剧热播榜',
@@ -74,6 +63,17 @@ export default {
                     params: {
                         channel_id: 2,
                         mode: 4,
+                        page_id: 1,
+                        data_type: 1,
+                        ret_num: 48,
+                    },
+                },
+                {
+                    path: '/aiqiyi/tvnew',
+                    name: '电视剧综合',
+                    params: {
+                        channel_id: 2,
+                        mode: 24,
                         page_id: 1,
                         data_type: 1,
                         ret_num: 48,

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <List :list-data="listData"/>
+        <List :list-data="listData" />
     </div>
 </template>
 
@@ -13,16 +13,16 @@ export default {
 
     data() {
         return {
-            listData:[],
-            // query:{},
+            listData: [],
         }
     },
     created() {
         // 加载第一页数据
-        // this.query = this.$route.query
         this.$api.youku.main().then((res) => {
-            // console.log(res.data.data.categoryVideos)
-            this.listData = res.data.moduleList
+            var abc = res.data.moduleList
+            abc.length = 5
+            abc.splice(1,1)
+            this.listData = abc
             console.log(this.listData)
         })
     },

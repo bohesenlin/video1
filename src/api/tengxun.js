@@ -1,10 +1,11 @@
 import request from '../utils/request'
 
 //tengxun
-export function main() {
+export function main(params = {}) {
     return request({
         method: 'get',
         url: '/tengxun/main',
+        params
         // params: { videoname: '斗罗大陆' },
     })
 }
@@ -35,16 +36,3 @@ export function tengxunsearch(params = {}) {
         params,
     })
 }
-
-
-
-// 视频播放页面
-// export function getvideo_aiqiyivideolist(params = {}) {
-//     return request({
-//         method: 'get',
-//         url: '/aiqiyivideolist',
-//         params,
-//         // params: { videoname: '斗罗大陆' },
-//     })
-// }
-

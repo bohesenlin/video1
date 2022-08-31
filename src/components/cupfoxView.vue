@@ -47,7 +47,7 @@ export default {
     height: 100%;
 }
 .cupfox .cupfox_iframe{
-    height: 500px;
-    width: 100%;
+    height: 92vh;
+    width: 98vw;
 }
 </style>

@@ -1,5 +1,14 @@
 <template>
-    <div class="home">
+    <div
+        class="home"
+        v-show="
+            $route.path.indexOf('search') !== -1 ||
+            $route.path.indexOf('videoview') !== -1 ||
+            $route.path.indexOf('cupfoxview') !== -1
+                ? false
+                : true
+        "
+    >
         <div class="abc">
             <router-link to="/aiqiyi" tag="a">爱奇艺</router-link>
             <router-link to="/tengxun" tag="a">腾讯视频</router-link>

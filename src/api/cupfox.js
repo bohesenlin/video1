@@ -7,13 +7,3 @@ export function cupfox(params = {}) {
         params,
     })
 }
-
-// export function tengxun(params = {}) {
-//     return request({
-//         method: 'get',
-//         url: '/tengxun/list',
-//         params,
-//         // params: { videoname: '斗罗大陆' },
-//     })
-// }
-

@@ -12,7 +12,6 @@
                         v-for="(item, index) in item.itemList"
                         :key="index"
                     >
-                        <!-- 更改，原来为videoid，更改成videoLink -->
                         <div class="card">
                             <img v-lazy="item.img.indexOf('http')!=-1?item.img:'https:' + item.img" />
                             <div class="count">

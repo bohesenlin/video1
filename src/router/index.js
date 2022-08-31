@@ -8,17 +8,17 @@ const routes = [
         path: '/',
         redirect: '/tengxun',
     },
-    
+
     // 爱奇艺
     {
         path: '/aiqiyi',
         name: 'aiqiyi',
         component: () => import('../views/HomeView.vue'),
         redirect: {
-            path: '/aiqiyi/tvnew',
+            path: '/aiqiyi/tvsynthesis',
             query: {
                 channel_id: 2,
-                mode: 24,
+                mode: 11,
                 page_id: 1,
                 data_type: 1,
                 ret_num: 48,
@@ -210,9 +210,7 @@ const routes = [
         component: () => import('../views/TengxunView.vue'),
         redirect: {
             path: '/tengxun/index',
-            query: {
-                
-            },
+            query: {},
         },
         children: [
             {
@@ -444,14 +442,15 @@ const routes = [
             {
                 path: 'variety',
                 name: 'variety',
-                component: () => import('../components/MangguoVarietyListView.vue'),
+                component: () =>
+                    import('../components/MangguoVarietyListView.vue'),
             },
         ],
     },
 
     {
         path: '/records',
-        component: () => import('../components/Records1.vue'),
+        component: () => import('../components/Records2.vue'),
     },
 
     // 视频搜索界面
@@ -463,12 +462,14 @@ const routes = [
             {
                 path: 'aiqiyisearch',
                 name: 'aiqiyisearch',
-                component: () => import('../components/TengxunSearchListView.vue'),
+                component: () =>
+                    import('../components/TengxunSearchListView.vue'),
             },
             {
                 path: 'youkusearch',
                 name: 'youkusearch',
-                component: () => import('../components/TengxunSearchListView.vue'),
+                component: () =>
+                    import('../components/TengxunSearchListView.vue'),
             },
             {
                 path: 'mangguosearch',

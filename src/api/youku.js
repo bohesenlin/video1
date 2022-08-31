@@ -1,13 +1,11 @@
 import request from '../utils/request'
 
-
 //youku
 export function youku(params = {}) {
     return request({
         method: 'get',
         url: '/youku/list',
         params,
-        // params: { videoname: '斗罗大陆' },
     })
 }
 
@@ -16,8 +14,6 @@ export function main() {
     return request({
         method: 'get',
         url: '/youku/main',
-        // params,
-        // params: { videoname: '斗罗大陆' },
     })
 }
 
@@ -37,16 +33,3 @@ export function youkusearch(params = {}) {
         params,
     })
 }
-
-
-
-// 视频播放页面
-// export function getvideo_aiqiyivideolist(params = {}) {
-//     return request({
-//         method: 'get',
-//         url: '/aiqiyivideolist',
-//         params,
-//         // params: { videoname: '斗罗大陆' },
-//     })
-// }
-

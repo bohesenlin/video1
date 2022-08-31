@@ -1,5 +1,5 @@
 <template>
-    <div class="cupfox">
+    <div class="cupfox_search">
             <a v-for="(item, index) in listdata" :key="index" @click="cupfox_click(item.href)">
                 <div class="title">{{item.title}}</div>
                 <div class="text">
@@ -53,23 +53,21 @@ export default {
             if (this.name == '' || this.name == undefined) {
                 return null
             }
-            // this.$api.tengxun.tengxunsearch({ name: this.name }).then((res) => {
-            //     this.listdata = res.data
-            // })
         },
     },
 }
 </script>
 
 <style scoped>
-/* @import './SearchList.css'; */
-.cupfox{
-    height: 80px;
-    width: 360px;
-    padding: 10px;
+.cupfox_search{
+    width: 100vw;
+    padding: 0 1.33333333vw 0;
+    margin-top: 10.6vw;
+    height: 90vh;
+    overflow-y: scroll;
     
 }
-.cupfox a .title{
+.cupfox_search a .title{
     height: 20px;
     width: 100%;
     color: #dd5325;
@@ -77,24 +75,24 @@ export default {
     margin: 10px 0 10px 0;
     
 }
-.cupfox a .text{
+.cupfox_search a .text{
     height: 30px;
     width: 100%;
     display: flex;
     
 }
-.cupfox a .text .platform{
+.cupfox_search a .text .platform{
     display: flex;
     
 }
-.cupfox a .text .platform img{
+.cupfox_search a .text .platform img{
     height: 22px;
     width: 22px;
     border-radius: 10px;
     border: 2px solid#9fd4fd;
     
 }
-.cupfox a .text .platform .platform_name{
+.cupfox_search a .text .platform .platform_name{
     padding: 5px;
     height: 20px;
     border-top-right-radius: 10px;
@@ -106,7 +104,7 @@ export default {
     font-size: 12px;
     margin-left: -4px;
 }
-.cupfox a .text .recommend{
+.cupfox_search a .text .recommend{
     padding: 5px;
     margin-left: 5px;
     height: 20px;

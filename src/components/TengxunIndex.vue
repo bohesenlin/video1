@@ -1,10 +1,13 @@
 <template>
     <div class="m-home" ref="abc">
         <div class="video" v-for="(item, index) in listdata" :key="index">
-            <h3 class="videotitle">{{index}}</h3>
+            <h3 class="videotitle">{{ index }}</h3>
             <div class="video-list active">
                 <router-link
-                    :to="{ path: '/tengxunvideoview', query: { item: JSON.stringify(item) } }"
+                    :to="{
+                        path: '/tengxunvideoview',
+                        query: { item: JSON.stringify(item) },
+                    }"
                     tag="a"
                     href="#"
                     class="video-item"
@@ -42,6 +45,12 @@ export default {
         this.$api.tengxun.main().then((res) => {
             console.log(res.data)
             this.listdata = res.data.data
+            if (res.data.data['动漫'].length == 0) {
+                this.$api.tengxun.main({time:new Date()}).then((res) => {
+                    console.log(res.data)
+                    this.listdata = res.data.data
+                })
+            }
         })
     },
     mounted() {

@@ -45,7 +45,7 @@
         </div>
         <div style="margin:6px">无法观看？换个接口试试吧</div>
         <div class="cupfox">
-            <a v-for="(item, index) in cupfox_list" :key="index" @click="cupfox_click(item.href)">
+            <a v-for="(item, index) in cupfox_list" :key="index" @click="cupfox_click(item)">
                 <div class="title">{{item.title}}</div>
                 <div class="text">
                     <div class="platform">
@@ -133,8 +133,9 @@ export default {
             this.cupfox_list = ret1.data
             console.log(this.cupfox_list)
         },
-        cupfox_click(href){
-            this.$router.push({path:'/cupfoxview',query:{href:href}})
+        cupfox_click(item){
+            this.cupfox_local_Storage(item)
+            this.$router.push({path:'/cupfoxview',query:{href:item.href}})
         },
         select_interface(index){
             this.isActive = index
@@ -231,6 +232,12 @@ export default {
             var obj = JSON.parse(localStorage.getItem('data_list')) || {}
             this.data_query['platform'] = item_name
             obj[this.data_query.href] = this.data_query
+            localStorage.setItem('data_list', JSON.stringify(obj))
+        },
+        cupfox_local_Storage(item_name) {
+            var obj = JSON.parse(localStorage.getItem('data_list')) || {}
+            item_name['watch_time'] = Date.now()
+            obj[item_name.href] = item_name
             localStorage.setItem('data_list', JSON.stringify(obj))
         },
 
