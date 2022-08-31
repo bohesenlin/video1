@@ -3,10 +3,10 @@
         <div class="nav">
             <div class="nav_list">
                 <router-link tag="a" :to="{ path: '/videosearchview/cupfoxsearch', query: this.$route.query }">cupfox搜索</router-link>
-                <router-link tag="a" :to="{ path: '/videosearchview/tengxunsearch', query: this.$route.query }">腾讯搜索</router-link>
-                <router-link tag="a" :to="{ path: '/videosearchview/aiqiyisearch', query: this.$route.query }">爱奇艺搜索</router-link>
-                <router-link tag="a" :to="{ path: '/videosearchview/youkusearch', query: this.$route.query }">优酷搜索</router-link>
-                <router-link tag="a" :to="{ path: '/videosearchview/mangguosearch', query: this.$route.query }">芒果TV搜索</router-link>
+                <router-link tag="a" :to="{ path: '/videosearchview/tengxunsearch', query: this.$route.query }">聚合搜索</router-link>
+                <!-- <router-link tag="a" :to="{ path: '/videosearchview/aiqiyisearch', query: this.$route.query }">爱奇艺搜索</router-link> -->
+                <!-- <router-link tag="a" :to="{ path: '/videosearchview/youkusearch', query: this.$route.query }">优酷搜索</router-link> -->
+                <!-- <router-link tag="a" :to="{ path: '/videosearchview/mangguosearch', query: this.$route.query }">芒果TV搜索</router-link> -->
                 <!-- <router-link tag="a" :to="{ path: '/videosearchview/fantuantvsearch', query: this.$route.query }">饭团TV搜索</router-link> -->
             </div>
         </div>
@@ -38,7 +38,7 @@ export default {
 }
 .nav .nav_list{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     text-decoration: none;
     overflow-x: scroll;
 }

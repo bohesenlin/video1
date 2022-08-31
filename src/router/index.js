@@ -459,29 +459,29 @@ const routes = [
         name: 'videosearchview',
         component: () => import('../views/VideoSearchView.vue'),
         children: [
-            {
-                path: 'aiqiyisearch',
-                name: 'aiqiyisearch',
-                component: () =>
-                    import('../components/TengxunSearchListView.vue'),
-            },
-            {
-                path: 'youkusearch',
-                name: 'youkusearch',
-                component: () =>
-                    import('../components/TengxunSearchListView.vue'),
-            },
-            {
-                path: 'mangguosearch',
-                name: 'mangguosearch',
-                component: () =>
-                    import('../components/TengxunSearchListView.vue'),
-            },
+            // {
+            //     path: 'aiqiyisearch',
+            //     name: 'aiqiyisearch',
+            //     component: () =>
+            //         import('../components/TengxunSearchListView.vue'),
+            // },
+            // {
+            //     path: 'youkusearch',
+            //     name: 'youkusearch',
+            //     component: () =>
+            //         import('../components/TengxunSearchListView.vue'),
+            // },
+            // {
+            //     path: 'mangguosearch',
+            //     name: 'mangguosearch',
+            //     component: () =>
+            //         import('../components/TengxunSearchListView.vue'),
+            // },
             {
                 path: 'tengxunsearch',
                 name: 'tengxunsearch',
                 component: () =>
-                    import('../components/TengxunSearchListView.vue'),
+                    import('../components/TengxunSearchListView1.vue'),
             },
             {
                 path: 'cupfoxsearch',
@@ -489,12 +489,12 @@ const routes = [
                 component: () =>
                     import('../components/CupfoxSearchListView.vue'),
             },
-            {
-                path: 'fantuantvsearch',
-                name: 'fantuantvsearch',
-                component: () =>
-                    import('../components/TengxunSearchListView.vue'),
-            },
+            // {
+            //     path: 'fantuantvsearch',
+            //     name: 'fantuantvsearch',
+            //     component: () =>
+            //         import('../components/TengxunSearchListView.vue'),
+            // },
         ],
     },
 

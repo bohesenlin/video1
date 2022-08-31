@@ -213,7 +213,7 @@ export default {
                     return null
                 }
                 this.$router.replace({
-                    path: '/videosearchview/aiqiyisearch',
+                    path: '/videosearchview/tengxunsearch',
                     query: { name: this.text },
                 })
             }

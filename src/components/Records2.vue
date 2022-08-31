@@ -32,10 +32,9 @@ export default {
             pic: {
                 tengxun:
                     'https://p0.meituan.net/dpgroup/22f08cedbac628d9e698553af24002114681.png',
-                youku: 'https://p0.meituan.net/dpgroup/22f08cedbac628d9e698553af24002114681.png',
-                aiqiyi: 'https://p0.meituan.net/dpgroup/22f08cedbac628d9e698553af24002114681.png',
-                mangguo:
-                    'https://p0.meituan.net/dpgroup/22f08cedbac628d9e698553af24002114681.png',
+                youku: require('../assets/img/优酷.png'),
+                aiqiyi: require('../assets/img/爱奇艺.png'),
+                mangguo: require('../assets/img/芒果TV-01.png'),
             },
         }
     },
