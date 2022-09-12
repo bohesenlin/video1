@@ -1,21 +1,23 @@
 <template>
     <div id="app">
         <!-- <keep-alive> -->
-            <router-view />
+        <router-view />
         <!-- </keep-alive> -->
-        <BtnView />
+        <!-- <BtnView /> -->
     </div>
 </template>
 <script>
-import BtnView from './components/BtnView'
 export default {
-    components: {
-        BtnView,
-    },
+    
 }
 </script>
 <style>
 .router-link-active {
-  background-color: rgb(238, 238, 238);
+    background-color: rgb(238, 238, 238);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 </style>

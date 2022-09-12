@@ -11,13 +11,14 @@
                     <img :src="item.imgUrl" />
                     <div class="platform_name">{{ item.platform }}</div>
                 </div>
-                <div class="recommend">{{ item.figure_caption }}</div>
+                <div class="recommend" v-show="item.figure_caption!=''">{{ item.figure_caption }}</div>
             </div>
         </a>
     </div>
 </template>
 
 <script>
+// import { tengxun } from '@/api/tengxun'
 export default {
     data() {
         return {
@@ -52,7 +53,6 @@ export default {
                         res.data.length = 5
                     }
                     for (var i = 0; i < res.data.length; i++) {
-                        res.data[i]['platform'] = 'tengxun'
                         res.data[i]['imgUrl'] = this.pic['tengxun']
                     }
                     this.listdata.push(...res.data)
@@ -64,7 +64,6 @@ export default {
                         res.data.length = 5
                     }
                     for (var i = 0; i < res.data.length; i++) {
-                        res.data[i]['platform'] = 'aiqiyi'
                         res.data[i]['imgUrl'] = this.pic['aiqiyi']
                     }
                     this.listdata.push(...res.data)
@@ -76,7 +75,6 @@ export default {
                         res.data.length = 5
                     }
                     for (var i = 0; i < res.data.length; i++) {
-                        res.data[i]['platform'] = 'youku'
                         res.data[i]['imgUrl'] = this.pic['youku']
                     }
                     this.listdata.push(...res.data)
@@ -88,7 +86,6 @@ export default {
                         res.data.length = 5
                     }
                     for (var i = 0; i < res.data.length; i++) {
-                        res.data[i]['platform'] = 'mangguo'
                         res.data[i]['imgUrl'] = this.pic['mangguo']
                     }
                     this.listdata.push(...res.data)
@@ -97,13 +94,24 @@ export default {
         click(item) {
             console.log(item)
             if (
-                item.platform == 'tengxun' ||
-                item.platform == 'mangguo' ||
-                item.platform == 'aiqiyi' ||
-                item.platform == 'youku'
+                item.platform == '腾讯视频' ||
+                item.platform == '芒果TV' ||
+                item.platform == '爱奇艺' ||
+                item.platform == '优酷'
             ) {
+                var platform = ''
+                if(item.platform == '腾讯视频'){
+                    platform = 'tengxun'
+                }else if(item.platform == '芒果TV'){
+                    platform = 'mangguo'
+                }else if(item.platform == '爱奇艺'){
+                    platform = 'aiqiyi'
+                }else if(item.platform == '优酷'){
+                    platform = 'youku'
+                }
+                    
                 this.$router.push({
-                    path: `/${item.platform}videoview`,
+                    path: `/${platform}videoview`,
                     query: { item: JSON.stringify(item) },
                 })
             } else {
@@ -114,27 +122,18 @@ export default {
             }
         },
     },
-
-    // watch: {
-    //     '$route.query.name'() {
-    //         this.name = this.$route.query.name
-    //         // 判断是否在搜索界面
-    //         if (this.name == '' || this.name == undefined) {
-    //             return null
-    //         }
-    //         this.$api.tengxun.tengxunsearch({ name: this.name }).then((res) => {
-    //             this.listdata = res.data
-    //         })
-    //     },
-    // },
 }
 </script>
 
 <style scoped>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .cupfox_search {
     width: 100vw;
     padding: 0 1.33333333vw 0;
-    margin-top: 10.6vw;
     height: 90vh;
     overflow-y: scroll;
 }

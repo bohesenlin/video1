@@ -65,8 +65,8 @@ export default {
 <style scoped>
 .m-home {
     /* padding: 1vw 1.33333333vw 0; */
-    padding: 13.33333333vw 1.33333333vw 0;
-    height: 95vh;
+    padding: 1vw 1.33333333vw 0;
+    height: 93.6vh;
     overflow-y: scroll;
 }
 .m-home .video-list {

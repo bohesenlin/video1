@@ -3,16 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-.nav {
-  position: fixed;
+.home .nav {
+  /* position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
   background-color: #fff;
   box-shadow: 0 0.53333vw 2.66667vw rgba(0, 0, 0, 0.2);
   width: 100%;
   z-index: 999;
 }
-.nav .channel-menu {
+.home .nav .channel-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,15 +20,15 @@
   background-color: #fff;
   border-bottom: 1px solid #e7e7e7;
 }
-.nav .channel-menu .tabs {
+.home .nav .channel-menu .tabs {
   overflow: hidden;
   flex: 1;
 }
-.nav .channel-menu .tabs .tabs-list {
+.home .nav .channel-menu .tabs .tabs-list {
   display: flex;
   overflow-x: scroll;
 }
-.nav .channel-menu .tabs .tabs-list a {
+.home .nav .channel-menu .tabs .tabs-list a {
   padding: 0 4.26666667vw;
   white-space: nowrap;
   font-size: 3.73333333vw;
@@ -45,8 +45,8 @@
   bottom: 0;
   background-color: #fb7299;
 } */
-.nav .channel-menu .after {
-  width: 10.66666667vw;
+.home .nav .channel-menu .after {
+  width: 18vw;
   height: 10.66666667vw;
   display: flex;
   /* justify-content: center; */
@@ -56,34 +56,42 @@
   background-color: #fff;
   color: #ccc;
 }
-.nav .channel-menu .after img {
-  width: 80%;
-  height: 80%;
+.home .nav .channel-menu .after .search1 {
+  width: 6vw;
+  height: 6vw;
+  margin: 1vw;
 }
-.nav .channel-menu .after .search_bar {
+.home .nav .channel-menu .after .record {
+  width: 5.1vw;
+  height: 5.1vw;
+  margin: 1vw;
+}
+.home .nav .channel-menu .after .search_bar {
   position: absolute;
   left: 0;
   top: 0;
-  width: 90%;
+  width: 82%;
   height: 10.66666667vw;
   background-color: #fff;
   margin: 0;
   /* display: none; */
 }
-.nav .channel-menu .after .search_bar .search_wrapper {
+.home .nav .channel-menu .after .search_bar .search_wrapper {
   width: 100%;
   height: 8vw;
 }
-.nav .channel-menu .after .search_bar .search_wrapper .search-inp {
-  width: 90%;
+.home .nav .channel-menu .after .search_bar .search_wrapper .search-inp {
+  width: 96%;
   height: 8vw;
   border: none;
   font-size: 16px;
   border: 1px solid #ebebeb;
   outline: none;
+  border-radius: 4vw;
+  padding-left: 3vw;
   
 }
-.nav .channel-menu .after .search_bar .search_wrapper .search-inp:focus {
+.home .nav .channel-menu .after .search_bar .search_wrapper .search-inp:focus {
   border-color: #ff6700;
 }
 

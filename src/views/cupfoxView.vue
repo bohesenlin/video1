@@ -1,5 +1,6 @@
 <template>
     <div class="cupfox">
+        <Topnav />
         <div class="cupfox_iframe">
             <iframe
                 id="iframe"
@@ -16,10 +17,13 @@
 </template>
 
 <script>
+import Topnav from '../components/Topnav'
 export default {
+    components: {
+        Topnav,
+    },
     mounted(){
         this.openIframe(this.$route.query.href)
-        console.log(this.$route.query.href)
     },
     methods:{
         openIframe(url) {
@@ -43,11 +47,10 @@ export default {
 
 <style scoped>
 .cupfox {
-    padding: 13.33333333vw 1.33333333vw 0;
     height: 100%;
 }
 .cupfox .cupfox_iframe{
-    height: 92vh;
-    width: 98vw;
+    height: 90vh;
+    width: 100vw;
 }
 </style>

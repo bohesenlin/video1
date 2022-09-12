@@ -8,10 +8,10 @@
             <div class="title">{{ item.title }}</div>
             <div class="text">
                 <div class="platform">
-                    <img :src="item.imgUrl" />
+                    <img :src="item.platform_img" />
                     <div class="platform_name">{{ item.platform }}</div>
                 </div>
-                <div class="recommend">{{ item.recommend }}</div>
+                <div class="recommend"  v-show="item.recommend!=''">{{ item.recommend }}</div>
             </div>
         </a>
     </div>
@@ -65,7 +65,6 @@ export default {
 .cupfox_search {
     width: 100vw;
     padding: 0 1.33333333vw 0;
-    margin-top: 10.6vw;
     height: 90vh;
     overflow-y: scroll;
 }

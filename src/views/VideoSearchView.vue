@@ -1,5 +1,6 @@
 <template>
-    <div class="home">
+    <div class="search">
+        <Topnav />
         <div class="nav">
             <div class="nav_list">
                 <router-link tag="a" :to="{ path: '/videosearchview/cupfoxsearch', query: this.$route.query }">cupfox搜索</router-link>
@@ -19,7 +20,11 @@
 </template>
 
 <script>
+import Topnav from '../components/Topnav'
 export default {
+    components: {
+        Topnav,
+    },
     mounted() {
         console.log(this.$route.query)
     },
@@ -32,17 +37,16 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-.nav{
+.search .nav{
     height: 10.66666667vw;
     overflow: hidden;
 }
-.nav .nav_list{
+.search .nav .nav_list{
     display: flex;
-    /* justify-content: space-between; */
     text-decoration: none;
     overflow-x: scroll;
 }
-.nav_list a{
+.search .nav .nav_list a{
     padding: 0 4.26666667vw;
     white-space: nowrap;
     font-size: 3.73333333vw;
