@@ -92,6 +92,23 @@ export default {
                         sort: 75,
                     },
                 },
+                
+                {
+                    path: '/tengxun/hanju',
+                    name: '韩剧',
+                },
+                {
+                    path: '/tengxun/oumei',
+                    name: '欧美',
+                },
+                {
+                    path: '/tengxun/yingju',
+                    name: '英剧',
+                },
+                {
+                    path: '/tengxun/riju',
+                    name: '日剧',
+                },
                 {
                     path: '/tengxun/variety',
                     name: '综艺',

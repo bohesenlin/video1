@@ -1,7 +1,7 @@
 <template>
     <div class="search">
         <Topnav />
-        <div class="nav">
+        <div class="nav" v-show="$route.path.indexOf('douban')!=-1">
             <div class="nav_list">
                 <router-link tag="a" :to="{ path: '/videosearchview/cupfoxsearch', query: this.$route.query }">cupfox搜索</router-link>
                 <router-link tag="a" :to="{ path: '/videosearchview/tengxunsearch', query: this.$route.query }">聚合搜索</router-link>

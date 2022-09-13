@@ -3,7 +3,7 @@
         <a
             v-for="(item, index) in listdata"
             :key="index"
-            @click="cupfox_click(item.href)"
+            @click="cupfox_click(item)"
         >
             <div class="title">{{ item.title }}</div>
             <div class="text">
@@ -44,8 +44,15 @@ export default {
                 })
             }
         },
-        cupfox_click(href) {
-            this.$router.push({ path: '/cupfoxview', query: { href: href } })
+        cupfox_click(item) {
+            this.cupfox_local_Storage(item)
+            this.$router.push({ path: '/cupfoxview', query: { href: item.href } })
+        },
+        cupfox_local_Storage(item_name) {
+            var obj = JSON.parse(localStorage.getItem('data_list')) || {}
+            item_name['watch_time'] = Date.now()
+            obj[item_name.href] = item_name
+            localStorage.setItem('data_list', JSON.stringify(obj))
         },
     },
 

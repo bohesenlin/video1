@@ -8,7 +8,7 @@
             <div class="title">{{ item.title }}</div>
             <div class="text">
                 <div class="platform">
-                    <img :src="item.imgUrl" />
+                    <img :src="item.platform_img" />
                     <div class="platform_name">{{ item.platform }}</div>
                 </div>
                 <div class="recommend" v-show="item.figure_caption!=''">{{ item.figure_caption }}</div>
@@ -53,7 +53,7 @@ export default {
                         res.data.length = 5
                     }
                     for (var i = 0; i < res.data.length; i++) {
-                        res.data[i]['imgUrl'] = this.pic['tengxun']
+                        res.data[i]['platform_img'] = this.pic['tengxun']
                     }
                     this.listdata.push(...res.data)
                 })
@@ -64,7 +64,7 @@ export default {
                         res.data.length = 5
                     }
                     for (var i = 0; i < res.data.length; i++) {
-                        res.data[i]['imgUrl'] = this.pic['aiqiyi']
+                        res.data[i]['platform_img'] = this.pic['aiqiyi']
                     }
                     this.listdata.push(...res.data)
                 })
@@ -75,7 +75,7 @@ export default {
                         res.data.length = 5
                     }
                     for (var i = 0; i < res.data.length; i++) {
-                        res.data[i]['imgUrl'] = this.pic['youku']
+                        res.data[i]['platform_img'] = this.pic['youku']
                     }
                     this.listdata.push(...res.data)
                 })
@@ -86,7 +86,7 @@ export default {
                         res.data.length = 5
                     }
                     for (var i = 0; i < res.data.length; i++) {
-                        res.data[i]['imgUrl'] = this.pic['mangguo']
+                        res.data[i]['platform_img'] = this.pic['mangguo']
                     }
                     this.listdata.push(...res.data)
                 })

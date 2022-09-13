@@ -108,6 +108,12 @@ export default {
                     'comic': { c: 100, p: 1, type: 'show' },
                     'variety': { c: 85, p: 1, type: 'show' },
                 },
+                "douban":{
+                    'hanju': { start: 0, tags: '韩国' ,selected_categories:{"地区":"韩国"}},
+                    'oumei': { start: 0, tags: '欧美,Netflix' ,selected_categories:{"地区":"欧美"}},
+                    'yingju': { start: 0, tags: '英国' ,selected_categories:{"地区":"英国"}},
+                    'riju': { start: 0, tags: '日本' ,selected_categories:{"地区":"日本"}},
+                },
                 "mangguotv":{
                     'tvplay': {
                         allowedRC: 1,
@@ -171,7 +177,6 @@ export default {
         this.query = this.$route.query
         // 加载第一页数据
         this.http_request(this.query1)
-        // this.http_request(this.$route.query)
     },
     mounted() {
         //绑定滚动事件
@@ -207,6 +212,12 @@ export default {
         http_request(query) {
             // console.log(this.path.split('/'))
             let path = this.path.split('/')[2]
+            if(path == "oumei"|| path == 'hanju'|| path == 'yingju'|| path == 'riju'){
+                this.$api.douban.doubanclass(query.douban[path]).then((res) => {
+                    this.listdata.push(...res.data)
+                })
+                return
+            }
             this.$api.tengxun.tengxunclass(query.tengxun[path]).then((res) => {
                 this.listdata.push(...res.data)
             })
@@ -224,10 +235,16 @@ export default {
 
         loadmore() {
             let path = this.path.split('/')[2]
+            if(path == "oumei"|| path == 'hanju'|| path == 'yingju'|| path == 'riju'){
+                this.query1.douban[path].start = (this.index-1)*30
+                this.http_request(this.query1)
+                return
+            }
             this.query1.tengxun[path].offset = (this.index-1)*30
             this.query1.aiqiyi[path].page_id=this.index
             this.query1.youku[path].p = this.index
             this.query1.mangguotv[path].pn = this.index
+            // this.query1.douban[path].start = (this.index-1)*20
             
             this.http_request(this.query1)
         },
@@ -253,6 +270,11 @@ export default {
                 this.$router.push({
                     path: `/${platform}videoview`,
                     query: { item: JSON.stringify(item) },
+                })
+            }else{
+                this.$router.push({
+                    path: `/videosearchview/cupfoxsearch`,
+                    query: { name: JSON.stringify(item.title),platform:'douban' },
                 })
             }
         },
@@ -283,6 +305,8 @@ export default {
 .m-home .video-list .video-item .card {
     position: relative;
     height: 41.6vw;
+    overflow: hidden;
+    border-radius: 5px;
 }
 .m-home .video-list .video-item .card .count {
     position: absolute;

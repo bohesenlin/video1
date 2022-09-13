@@ -45,6 +45,26 @@ const routes = [
                 name: 'variety',
                 component: () => import('../components/TengxunListView1.vue'),
             },
+            {
+                path: 'hanju',
+                name: 'hanju',
+                component: () => import('../components/TengxunListView1.vue'),
+            },
+            {
+                path: 'oumei',
+                name: 'oumei',
+                component: () => import('../components/TengxunListView1.vue'),
+            },
+            {
+                path: 'yingju',
+                name: 'yingju',
+                component: () => import('../components/TengxunListView1.vue'),
+            },
+            {
+                path: 'riju',
+                name: 'riju',
+                component: () => import('../components/TengxunListView1.vue'),
+            },
         ],
     },
 

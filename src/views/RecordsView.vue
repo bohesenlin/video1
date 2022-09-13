@@ -4,7 +4,7 @@
         <div class="nav">
             <h3>观看记录</h3>
             <div class="all" @click="click_delAll()">
-                <div>删除全部</div>
+                <div>清空</div>
                 <img src="../assets/img/删除.png" />
             </div>
         </div>
@@ -102,8 +102,10 @@ export default {
             }
         },
         click_delAll() {
-            localStorage.setItem('data_list', JSON.stringify({}))
-            this.int()
+            if(confirm('确认清空吗?')){
+                localStorage.setItem('data_list', JSON.stringify({}))
+                this.int()
+            }
         },
         del(item) {
             var obj = JSON.parse(localStorage.getItem('data_list'))
@@ -122,7 +124,7 @@ export default {
 <style scoped>
 .record .cupfox {
     height: 20vh;
-    width: 360px;
+    width: 100vw;
     padding: 10px;
 }
 .record .cupfox a {
@@ -174,6 +176,8 @@ export default {
     color: rgba(203, 30, 131, 0.9);
 }
 .record .cupfox a .del {
+    padding-right: 3vw;
+    margin-left: 10vw;
     padding-top: 20px;
     height: 20px;
 }
